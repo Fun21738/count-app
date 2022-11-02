@@ -1,20 +1,19 @@
-import { useState, useEffect } from "react"
+import React from "react"
+import useJose from "./useJose";
+
+
+
  const Increment = () => {
-    const [countUp, setCountUp] = useState(0);
+    const [val] = useJose(1)
+  
 
-    const handleAdd =()=>{
-        setTimeout(() => {
-            setCountUp(countUp+1);
-        },1000)
-    }
+// const [countUp,setCountUp] = useJose()
 
-    useEffect(()=>{
-        handleAdd();
-    })
+
     return (
         <div>
-            <h1>Postive count is: {countUp}</h1>
-            {/* <button onClick={() => handleAdd()}>+</button> */}
+            <h1>Postive count is: {val}</h1>
+            {/* <button onClick={() => setCountUp(countUp)}>+</button> */}
         </div>
     )
 }
